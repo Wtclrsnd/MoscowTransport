@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		72FA594C27CE3CCB002D2A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594B27CE3CCB002D2A20 /* AppDelegate.swift */; };
 		72FA594E27CE3CCB002D2A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594D27CE3CCB002D2A20 /* SceneDelegate.swift */; };
-		72FA595027CE3CCB002D2A20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594F27CE3CCB002D2A20 /* ViewController.swift */; };
-		72FA595327CE3CCB002D2A20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72FA595127CE3CCB002D2A20 /* Main.storyboard */; };
+		72FA595027CE3CCB002D2A20 /* StopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594F27CE3CCB002D2A20 /* StopsViewController.swift */; };
 		72FA595527CE3CD6002D2A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72FA595427CE3CD6002D2A20 /* Assets.xcassets */; };
 		72FA595827CE3CD6002D2A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72FA595627CE3CD6002D2A20 /* LaunchScreen.storyboard */; };
+		72FA596227CE3DB6002D2A20 /* StopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA596127CE3DB6002D2A20 /* StopsViewModel.swift */; };
+		72FA596627CE3DF5002D2A20 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA596527CE3DF5002D2A20 /* Models.swift */; };
+		72FA596827CE3E0D002D2A20 /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA596727CE3E0D002D2A20 /* APIWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		72FA594827CE3CCB002D2A20 /* MoscowTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscowTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FA594B27CE3CCB002D2A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72FA594D27CE3CCB002D2A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		72FA594F27CE3CCB002D2A20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		72FA595227CE3CCB002D2A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72FA594F27CE3CCB002D2A20 /* StopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsViewController.swift; sourceTree = "<group>"; };
 		72FA595427CE3CD6002D2A20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72FA595727CE3CD6002D2A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72FA595927CE3CD6002D2A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72FA596127CE3DB6002D2A20 /* StopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsViewModel.swift; sourceTree = "<group>"; };
+		72FA596527CE3DF5002D2A20 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		72FA596727CE3E0D002D2A20 /* APIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		72FA594A27CE3CCB002D2A20 /* MoscowTransport */ = {
 			isa = PBXGroup;
 			children = (
-				72FA594B27CE3CCB002D2A20 /* AppDelegate.swift */,
-				72FA594D27CE3CCB002D2A20 /* SceneDelegate.swift */,
-				72FA594F27CE3CCB002D2A20 /* ViewController.swift */,
-				72FA595127CE3CCB002D2A20 /* Main.storyboard */,
-				72FA595427CE3CD6002D2A20 /* Assets.xcassets */,
-				72FA595627CE3CD6002D2A20 /* LaunchScreen.storyboard */,
+				72FA596727CE3E0D002D2A20 /* APIWorker.swift */,
+				72FA596427CE3DE1002D2A20 /* Model */,
+				72FA595F27CE3CE5002D2A20 /* View */,
+				72FA596327CE3DBA002D2A20 /* ViewModel */,
+				72FA596027CE3D01002D2A20 /* Common */,
 				72FA595927CE3CD6002D2A20 /* Info.plist */,
 			);
 			path = MoscowTransport;
+			sourceTree = "<group>";
+		};
+		72FA595F27CE3CE5002D2A20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72FA594F27CE3CCB002D2A20 /* StopsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72FA596027CE3D01002D2A20 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				72FA595627CE3CD6002D2A20 /* LaunchScreen.storyboard */,
+				72FA595427CE3CD6002D2A20 /* Assets.xcassets */,
+				72FA594B27CE3CCB002D2A20 /* AppDelegate.swift */,
+				72FA594D27CE3CCB002D2A20 /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		72FA596327CE3DBA002D2A20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72FA596127CE3DB6002D2A20 /* StopsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72FA596427CE3DE1002D2A20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72FA596527CE3DF5002D2A20 /* Models.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +165,6 @@
 			files = (
 				72FA595827CE3CD6002D2A20 /* LaunchScreen.storyboard in Resources */,
 				72FA595527CE3CD6002D2A20 /* Assets.xcassets in Resources */,
-				72FA595327CE3CCB002D2A20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +175,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72FA595027CE3CCB002D2A20 /* ViewController.swift in Sources */,
+				72FA596227CE3DB6002D2A20 /* StopsViewModel.swift in Sources */,
+				72FA595027CE3CCB002D2A20 /* StopsViewController.swift in Sources */,
 				72FA594C27CE3CCB002D2A20 /* AppDelegate.swift in Sources */,
 				72FA594E27CE3CCB002D2A20 /* SceneDelegate.swift in Sources */,
+				72FA596827CE3E0D002D2A20 /* APIWorker.swift in Sources */,
+				72FA596627CE3DF5002D2A20 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		72FA595127CE3CCB002D2A20 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				72FA595227CE3CCB002D2A20 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		72FA595627CE3CD6002D2A20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +326,6 @@
 				INFOPLIST_FILE = MoscowTransport/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +353,6 @@
 				INFOPLIST_FILE = MoscowTransport/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
