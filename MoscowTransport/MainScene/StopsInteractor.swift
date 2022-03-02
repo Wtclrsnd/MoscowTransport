@@ -22,6 +22,7 @@ final class StopsInteractor: StopsInteractorProtocol {
 		self.worker = worker
 	}
 
+	//getting data of stop list
 	func getData() {
 		let url = URL(string: urlString)
 		guard let safeUrl = url else { return }
@@ -31,8 +32,15 @@ final class StopsInteractor: StopsInteractorProtocol {
 		})
 	}
 
-	func getStopData(request: URLRequest, completion: @escaping ((CurrentStop) -> Void)) {
-		
+	//here i break VIP Cycle. Sssooory...
+	func getStopData(id: String, completion: @escaping (CurrentStop) -> Void) {
+		let urlId = urlString + "/" + id
+		let url = URL(string: urlId)
+		guard let safeUrl = url else { return }
+		let request = URLRequest(url: safeUrl)
+		worker?.getCurrentStopData(request: request, completion: { stop in
+			completion(stop)
+		})
 	}
 //	private var apiWorker: APIWorker!
 //

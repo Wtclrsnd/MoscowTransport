@@ -8,10 +8,14 @@
 import Foundation
 
 protocol StopsViewControllerProtocol: AnyObject {
-
+	func getData(stops: [Stop])
 }
 
 final class StopsPresenter: StopsPresenterProtocol {
 
 	weak var output: StopsViewControllerProtocol?
+
+	func getData(stops: [Stop]) {
+		output?.getData(stops: stops)
+	}
 }

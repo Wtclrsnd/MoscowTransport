@@ -11,7 +11,7 @@ struct StopsData: Codable {
 	let data: [Stop]
 }
 
-// MARK: - Datum
+// MARK: - Stop in list
 struct Stop: Codable {
 	let id: String
 	let lat, lon: Double
@@ -45,7 +45,7 @@ enum TypeElement: String, Codable {
 	case tram = "tram"
 }
 
-// MARK: - CurrentStop
+// MARK: - CurrentStop in map
 struct CurrentStop: Codable{
 	var id: String?
 	var name: String?

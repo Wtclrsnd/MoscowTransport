@@ -9,7 +9,7 @@ import UIKit
 
 protocol StopsInteractorProtocol: AnyObject {
 	func getData()
-	func getStopData(request: URLRequest, completion: @escaping ((CurrentStop) -> Void))
+	func getStopData(id: String, completion: @escaping (CurrentStop) -> Void)
 }
 
 class StopsViewController: UIViewController, StopsViewControllerProtocol {
@@ -18,7 +18,9 @@ class StopsViewController: UIViewController, StopsViewControllerProtocol {
 
 	private lazy var stops: [Stop] = [] {
 		didSet {
-			tableView.reloadData()
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
 		}
 	}
 
@@ -48,6 +50,7 @@ class StopsViewController: UIViewController, StopsViewControllerProtocol {
 		navigationController?.navigationBar.tintColor = .systemPink
 	}
 
+	//the presenter method
 	func getData(stops: [Stop]) {
 		self.stops = stops
 	}
@@ -66,6 +69,9 @@ extension StopsViewController: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let vc = MapViewController()
+		//here i break VIP Cycle. Sssooory...
+		output?.getStopData(id: stops[indexPath.row].id, completion: { stop in vc.stop = stop
+		} )
 		navigationController?.pushViewController(vc, animated: true)
 	}
 }
