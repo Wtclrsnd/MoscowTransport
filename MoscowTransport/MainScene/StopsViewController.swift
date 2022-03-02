@@ -8,14 +8,19 @@
 import UIKit
 
 protocol StopsInteractorProtocol: AnyObject {
-	
+	func getData()
+	func getStopData(request: URLRequest, completion: @escaping ((CurrentStop) -> Void))
 }
 
 class StopsViewController: UIViewController, StopsViewControllerProtocol {
 
 	var output: StopsInteractorProtocol?
 
-	private lazy var stops: [Stop] = []
+	private lazy var stops: [Stop] = [] {
+		didSet {
+			tableView.reloadData()
+		}
+	}
 
 	private lazy var tableView: UITableView = {
 		let table = UITableView()
@@ -30,6 +35,8 @@ class StopsViewController: UIViewController, StopsViewControllerProtocol {
 		tableView.dataSource = self
 
 		setUpUI()
+
+		output?.getData()
 	}
 
 	func setUpUI() {
@@ -40,17 +47,25 @@ class StopsViewController: UIViewController, StopsViewControllerProtocol {
 		title = "Остановки"
 		navigationController?.navigationBar.tintColor = .systemPink
 	}
+
+	func getData(stops: [Stop]) {
+		self.stops = stops
+	}
 }
 
 extension StopsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return stops.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		cell.textLabel?.text = stops[indexPath.row].name
 		return cell
 	}
 
-
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let vc = MapViewController()
+		navigationController?.pushViewController(vc, animated: true)
+	}
 }
