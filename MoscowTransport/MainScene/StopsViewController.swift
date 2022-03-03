@@ -41,7 +41,7 @@ class StopsViewController: UIViewController, StopsViewControllerProtocol {
 		output?.getData()
 	}
 
-	func setUpUI() {
+	private func setUpUI() {
 		view.addSubview(tableView)
 		tableView.frame = view.bounds
 

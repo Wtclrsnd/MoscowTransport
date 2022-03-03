@@ -8,13 +8,13 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
 	private lazy var mapView = MKMapView()
 
-	var annotation: StopAnnotation?
-	var lat: Double?
-	var lon: Double?
+	private var annotation: StopAnnotation?
+	private var lat: Double?
+	private var lon: Double?
 	var stop: CurrentStop?
 
 	override func viewDidLoad() {
@@ -24,10 +24,21 @@ class MapViewController: UIViewController {
 		lon = stop?.lon
 
 		setUpUI()
+		sheet()
+
+		let stopAnnotation = StopAnnotation(title: stop?.name ?? "", coordinate: CLLocationCoordinate2D(latitude: lat ?? 0, longitude: lon ?? 0))
 	}
 
 	private func setUpUI() {
 		view.addSubview(mapView)
 		mapView.frame = view.bounds
+	}
+
+	private func sheet() {
+		let sheetViewController = SheetViewController()
+		if let sheet = sheetViewController.sheetPresentationController {
+			sheet.detents = [.medium()]
+		}
+		present(sheetViewController, animated: true)
 	}
 }
