@@ -10,6 +10,8 @@
 		72E75F0E27CFA173002389B9 /* StopsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E75F0D27CFA173002389B9 /* StopsPresenter.swift */; };
 		72E75F1127CFA258002389B9 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E75F1027CFA258002389B9 /* Builder.swift */; };
 		72E75F1327CFF686002389B9 /* StopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E75F1227CFF686002389B9 /* StopAnnotation.swift */; };
+		72E75F1627D0DAA9002389B9 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E75F1527D0DAA9002389B9 /* SheetViewController.swift */; };
+		72E75F1827D0EFB5002389B9 /* RouteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E75F1727D0EFB5002389B9 /* RouteCollectionViewCell.swift */; };
 		72FA594C27CE3CCB002D2A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594B27CE3CCB002D2A20 /* AppDelegate.swift */; };
 		72FA594E27CE3CCB002D2A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594D27CE3CCB002D2A20 /* SceneDelegate.swift */; };
 		72FA595027CE3CCB002D2A20 /* StopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FA594F27CE3CCB002D2A20 /* StopsViewController.swift */; };
@@ -25,6 +27,8 @@
 		72E75F0D27CFA173002389B9 /* StopsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsPresenter.swift; sourceTree = "<group>"; };
 		72E75F1027CFA258002389B9 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		72E75F1227CFF686002389B9 /* StopAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAnnotation.swift; sourceTree = "<group>"; };
+		72E75F1527D0DAA9002389B9 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		72E75F1727D0EFB5002389B9 /* RouteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCollectionViewCell.swift; sourceTree = "<group>"; };
 		72FA594827CE3CCB002D2A20 /* MoscowTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscowTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FA594B27CE3CCB002D2A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72FA594D27CE3CCB002D2A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				72FA596927CE3E6A002D2A20 /* MapViewController.swift */,
+				72E75F1527D0DAA9002389B9 /* SheetViewController.swift */,
+				72E75F1727D0EFB5002389B9 /* RouteCollectionViewCell.swift */,
 			);
 			path = MapScene;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			files = (
 				72E75F0E27CFA173002389B9 /* StopsPresenter.swift in Sources */,
 				72FA596227CE3DB6002D2A20 /* StopsInteractor.swift in Sources */,
+				72E75F1627D0DAA9002389B9 /* SheetViewController.swift in Sources */,
 				72FA595027CE3CCB002D2A20 /* StopsViewController.swift in Sources */,
 				72FA594C27CE3CCB002D2A20 /* AppDelegate.swift in Sources */,
 				72E75F1327CFF686002389B9 /* StopAnnotation.swift in Sources */,
@@ -204,6 +211,7 @@
 				72E75F1127CFA258002389B9 /* Builder.swift in Sources */,
 				72FA596827CE3E0D002D2A20 /* APIWorker.swift in Sources */,
 				72FA596627CE3DF5002D2A20 /* Models.swift in Sources */,
+				72E75F1827D0EFB5002389B9 /* RouteCollectionViewCell.swift in Sources */,
 				72FA596A27CE3E6A002D2A20 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
