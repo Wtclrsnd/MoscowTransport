@@ -18,7 +18,7 @@ final class APIWorker {
 				return
 			}
 
-			print(data)
+//			print(data)
 
 			let jsonDecoder = JSONDecoder()
 
@@ -26,7 +26,7 @@ final class APIWorker {
 				let responseObject = try jsonDecoder.decode(
 					StopsData.self,
 					from: data)
-				print(responseObject)
+//				print(responseObject)
 				completion(responseObject.data)
 			} catch let error {
 				print(String(describing: error.localizedDescription))

@@ -12,6 +12,7 @@ class SheetViewController: UIViewController {
 	var name: String?
 	var type: String?
 	var routes: [RoutePath] = []
+	var colors: [UIColor] = [.systemPink, .orange, .blue, .cyan, .magenta, .green, .link, .brown, .purple, .red, .gray, .darkGray]
 
 	private let reusableIdentifier = "myCell"
 
@@ -42,9 +43,9 @@ class SheetViewController: UIViewController {
 		layout.scrollDirection = .horizontal
 		let width = UIScreen.main.bounds.width
 		layout.sectionInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
-		layout.itemSize = CGSize(width: (width - 60) / 2, height: width / 2)
+		layout.itemSize = CGSize(width: (width - 60) / 3, height: width / 4)
 		layout.minimumInteritemSpacing = 5
-		layout.minimumLineSpacing = 50
+		layout.minimumLineSpacing = 10
 
 		let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,10 +81,9 @@ class SheetViewController: UIViewController {
 		stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
 		stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250).isActive = true
 
-		collectionView.heightAnchor.constraint(equalToConstant: 140).isActive = true
-//		collectionView.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: -30).isActive = true
-//		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-//		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+//		collectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
+		collectionView.reloadData()
 	}
 }
 
@@ -96,7 +96,16 @@ extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSou
 		guard let cell = collectionView.dequeueReusableCell(
 			withReuseIdentifier: reusableIdentifier,
 			for: indexPath) as? RouteCollectionViewCell else { return UICollectionViewCell() }
-		cell.backgroundColor = .systemPink
+		cell.backgroundColor = .clear
+		cell.busLabel.backgroundColor = colors[indexPath.row]
+		cell.busLabel.text = routes[indexPath.row].number
+		var arrivals = ""
+		guard let stackArrivals = routes[indexPath.row].timeArrival else { return cell }
+
+		for i in stackArrivals {
+			arrivals += i + " "
+		}
+		cell.timeLabel.text = "Прибудет\nчерез\n" + arrivals
 		return cell
 	}
 }
