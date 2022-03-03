@@ -79,7 +79,7 @@ class SheetViewController: UIViewController {
 		stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
 		stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
 		stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-		stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250).isActive = true
+		stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 
 //		collectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
 
