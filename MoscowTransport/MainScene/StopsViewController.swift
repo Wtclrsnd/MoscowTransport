@@ -71,7 +71,9 @@ extension StopsViewController: UITableViewDelegate, UITableViewDataSource {
 		let vc = MapViewController()
 		//here i break VIP Cycle. Sssooory...
 		output?.getStopData(id: stops[indexPath.row].id, completion: { stop in vc.stop = stop
-		} )
-		navigationController?.pushViewController(vc, animated: true)
+			DispatchQueue.main.async {
+				self.navigationController?.pushViewController(vc, animated: true)
+			}
+		})
 	}
 }
