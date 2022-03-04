@@ -7,13 +7,12 @@
 
 import UIKit
 
-class RouteCollectionViewCell: UICollectionViewCell {
+final class RouteCollectionViewCell: UICollectionViewCell {
 
 	private lazy var stack: UIStackView = {
 		let stack = UIStackView()
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
-//		stack.alignment = .fill
 		stack.distribution = .fillEqually
 		stack.layer.cornerRadius = 12
 		stack.spacing = 3

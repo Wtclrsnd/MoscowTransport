@@ -81,13 +81,12 @@ class SheetViewController: UIViewController {
 		stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
 		stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 
-//		collectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-
 		collectionView.reloadData()
 	}
 }
 
 extension SheetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return routes.count
 	}
